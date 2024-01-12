@@ -6,9 +6,9 @@ from sklearn.linear_model import LinearRegression
 import datetime
 
 # Replace 'YOUR_API_KEY' with your Alpha Vantage API key
-api_key = '2XD46Q5F18KAG4HA'
+api_key = 'YOUR_API_KEY'
 
-# Function to fetch stock data from Alpha Vantage
+# Function to fetch stock data
 def get_stock_data(symbol, api_key):
     base_url = 'https://www.alphavantage.co/query'
     function = 'TIME_SERIES_DAILY'
@@ -31,7 +31,7 @@ def get_stock_data(symbol, api_key):
 
     return df
 
-# Function to predict stock price for the next 7 days using linear regression
+
 def predict_stock_price(df):
     df['Date'] = df.index
     df['Date'] = df['Date'].map(datetime.datetime.toordinal)
@@ -73,3 +73,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+#code by @binarybardakshat
